@@ -1,0 +1,13 @@
+{
+    "display_name": "Extension-Template",
+    "loading_order": 220,
+    "js": "index.js",
+    "css": "source/css/main.css",
+    "author": "Leandro Jofre",
+    "version": "0.0.0",
+    "homePage": "https://github.com/leandrojofre/SillyTavern-Extension-Template.git",
+    "dependencies": [
+        "third-party/SillyTavern-Tomato-Lib"
+    ],
+    "auto_update": true
+}
