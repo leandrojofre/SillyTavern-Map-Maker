@@ -1,11 +1,11 @@
 {
-    "display_name": "Extension-Template",
+    "display_name": "Map Maker",
     "loading_order": 220,
     "js": "index.js",
     "css": "source/css/main.css",
     "author": "Leandro Jofre",
     "version": "0.0.0",
-    "homePage": "https://github.com/leandrojofre/SillyTavern-Extension-Template.git",
+    "homePage": "https://github.com/leandrojofre/SillyTavern-Map-Maker.git",
     "dependencies": [
         "third-party/SillyTavern-Tomato-Lib"
     ],

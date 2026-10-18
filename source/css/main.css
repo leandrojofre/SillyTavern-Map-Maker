@@ -1,6 +1,6 @@
-.extension-template-custom-css {
-    --extension-template-separator-bottom: linear-gradient(90deg, var(--transparent), color-mix(in srgb, var(--SmartThemeBodyColor), transparent 80%), var(--transparent)) 1;
-    --extension-template-border-color: var(--SmartThemeBorderColor);
+.map-maker-custom-css {
+    --map-maker-separator-bottom: linear-gradient(90deg, var(--transparent), color-mix(in srgb, var(--SmartThemeBodyColor), transparent 80%), var(--transparent)) 1;
+    --map-maker-border-color: var(--SmartThemeBorderColor);
 
     .d-none {
         display: none !important;
@@ -19,7 +19,7 @@
 
     .separator-bottom {
         border-bottom: 1px solid;
-        border-image: var(--extension-template-separator-bottom) !important;
+        border-image: var(--map-maker-separator-bottom) !important;
         padding-bottom: 5px;
         margin-bottom: 5px;
         border-radius: 0;
@@ -47,6 +47,11 @@
 
     .flex-grow-1 {
         flex-grow: 1;
+    }
+
+    .w-stretch {
+        width: 100%;
+        width: stretch;
     }
 
 	.p-15px {
@@ -92,6 +97,6 @@
     .border {
         border: solid;
         border-width: 1px;
-        border-color: var(--extension-template-border-color) !important;
+        border-color: var(--map-maker-border-color) !important;
     }
 }

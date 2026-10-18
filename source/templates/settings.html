@@ -1,31 +1,36 @@
-<div class="extension-template-custom-css">
+<div class="map-maker-custom-css">
 	<div class="inline-drawer">
 		<div class="inline-drawer-toggle inline-drawer-header">
-			<b>Extension Template</b>
+			<b>Map Maker</b>
 			<div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
 		</div>
 
-		<div id="extension-template-settings-window" class="inline-drawer-content p-15px">
+		<div id="map-maker-settings-window" class="inline-drawer-content p-15px">
 			<div class="flex-container flex-column separator-bottom">
 				<b>Settings</b>
 
 				<label class="flex-container">
-					<input id="extension-template-enabled" setting="enabled" type="checkbox" />
-					Enable/Disable the extension
+					<input id="map-maker-enabled" setting="enabled" type="checkbox" />
+					<span>Enable the extension</span>
 				</label>
+
+                <div class="flex-container">
+                    <button id="map-maker-run" class="menu_button w-stretch gap-15px" type="button">Execute</button>
+                    <canvas id="map-maker-canvas" class="d-none"></canvas>
+                </div>
 			</div>
 
 			<div class="flex-container flex-column mb-10px">
 				<b>Debug settings</b>
 
 				<div class="flex-container">
-					<input id="extension-template-check-configuration" class="menu_button" type="button" value="Check Configuration" />
-					Print the configuration values ​​through the console
+					<input id="map-maker-check-configuration" class="menu_button" type="button" value="Check Configuration" />
+					<span>Print setting values on the console</span>
 				</div>
 
 				<label class="flex-container">
-					<input id="extension-template-debug" setting="debug" type="checkbox" />
-					Enable/Disable the debug console logs
+					<input id="map-maker-debug" setting="debug" type="checkbox" />
+					<span>Enable debug console logs</span>
 				</label>
 			</div>
 		</div>
