@@ -1,3 +1,6 @@
+import { Canvas } from "./source/classes/Canvas.js";
+import { Sprite } from "./source/classes/Sprite.js";
+
 export {
     // ...
 };
@@ -20,6 +23,7 @@ const {
     extensionSettings: extension_settings,
     eventSource,
     eventTypes,
+    POPUP_TYPE,
     callGenericPopup,
 } = context();
 
@@ -47,10 +51,25 @@ const defaultSettings = {
 // * MARK:Methods
 
 
-function runMapMaker() {
-    const canvas = document.getElementById(`${htmlSuffix}-canvas`);
+async function runMapMaker() {
+    const $mapCanvas = await MapMaker.templates.get('mapCanvas', { clone: true });
 
-    MapMaker.log(canvas);
+    if (!MapMaker.mapCanvas) {
+        const $canvas = $mapCanvas.find(`#${htmlSuffix}-canvas`);
+        const canvas = /** @type {HTMLCanvasElement} */($canvas[0]);
+
+        MapMaker.mapCanvas = new Canvas(canvas);
+        $canvas.toggleClass('d-none', false);
+    }
+
+    MapMaker.log({Canvas: MapMaker.mapCanvas});
+
+    callGenericPopup($mapCanvas, POPUP_TYPE.DISPLAY, null, {
+        allowEscapeClose: false,
+        large: true,
+        wide: true,
+        wider: true,
+    });
 }
 
 
@@ -59,10 +78,9 @@ function runMapMaker() {
 
 /** @type {APIInstanceExtras} */
 const InterfaceExtras = {
-    myCustomMethod() {
-        MapMaker.log('Hi');
-    }
-}
+    mapCanvas: null,
+    Sprite,
+};
 
 /** @type {GlobalInterface} */
 globalThis.MapMaker = null;
@@ -77,8 +95,7 @@ const settingsCallbacks = {};
 async function loadSettingsMenu() {
     const settingsHtml = await MapMaker.templates.get('settings');
 
-    // The ID extensions_settings2 is an alternative
-    $('#extensions_settings').append(settingsHtml);
+    $('#extensions_settings2').append(settingsHtml);
 
     $(`#${htmlSuffix}-enabled`).on('input', MapMaker.settings.global.onBoolean);
     $(`#${htmlSuffix}-debug`).on('input', MapMaker.settings.global.onBoolean);

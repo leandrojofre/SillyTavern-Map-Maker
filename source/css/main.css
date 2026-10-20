@@ -54,6 +54,11 @@
         width: stretch;
     }
 
+    .h-stretch {
+        height: 100%;
+        height: stretch;
+    }
+
 	.p-15px {
 		padding: 15px;
 	}
@@ -99,4 +104,8 @@
         border-width: 1px;
         border-color: var(--map-maker-border-color) !important;
     }
+}
+
+.popup.wider_dialogue_popup:has(.map-maker-custom-css) {
+    width: auto;
 }
